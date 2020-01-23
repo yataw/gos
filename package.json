@@ -1,0 +1,62 @@
+{
+  "name": "geoguru-client",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "child_process": "^1.0.2",
+    "esm": "^3.2.25",
+    "event-emitter": "^0.3.5",
+    "events": "^3.0.0",
+    "express": "~4.16.0",
+    "http-errors": "~1.6.2",
+    "jquery": "^3.4.1",
+    "morgan": "^1.9.1",
+    "nodemon": "^2.0.2",
+    "random": "^2.1.1",
+    "react": "^16.12.0",
+    "react-dom": "^16.12.0",
+    "react-jvectormap": "0.0.15",
+    "react-scripts": "^3.3.0",
+    "serve-favicon": "^2.5.0",
+    "simplebar-react": "^2.1.0",
+    "socket.io": "^2.3.0",
+    "socket.io-client": "^2.3.0",
+    "winston": "^3.1.0"
+  },
+  "scripts": {
+    "start": "node -r esm start",
+    "start:dev": "npm-run-all --parallel watch:sass nodemon:start react:start",
+    "start:prod": "npm run nodemon:start",
+    "nodemon:start": "nodemon -r esm src/backend src/general src/game src/mockdata",
+    "watch:sass": "node-sass src/sass/main.scss src/App.css -w",
+    "react:start": "set PORT=%REACT_DEV_PORT% && react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
+  },
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "devDependencies": {
+    "node-sass": "^4.13.0",
+    "npm-run-all": "^4.1.5"
+  },
+  "type": "dynamic",
+  "nodemonConfig": {
+    "watch": [
+      "src/backend/"
+    ]
+  }
+}
