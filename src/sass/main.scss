@@ -1,5 +1,5 @@
 
-.popup {
+/*.popup {
     height: 100vh;
     width: 100%;
     position: fixed;
@@ -13,33 +13,6 @@
 
     color: var(--color-text);
 
-    &__content {
-        @include absCenter;
-
-        width: 40%;
-        height: 25rem;
-        background-color: $color-white;
-        box-shadow: 0 2rem 4rem rgba($color-black, .2);
-        border-radius: 3px;
-        overflow: hidden;
-        opacity: 0;
-        transform: translate(-50%, -50%) scale(.25);
-        transition: all .5s .2s;
-
-        min-width: 40rem;
-        min-height: 25rem;
-
-        padding: 3rem;
-
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-
-        background-image: linear-gradient(105deg, rgba($color-black, .7), rgba(#037bc2, .7)), url(img/hero.jpg);
-
-        background-size: 100%;
-        background-repeat: no-repeat;
-    }
 
     //Open states
     &:target {
@@ -52,4 +25,8 @@
         transform: translate(-50%, -50%) scale(1);
     }
 
+}*/
+
+.message__author {
+    color: grey;
 }
