@@ -6,7 +6,6 @@ import Game from '../../game/game';
 
 module.exports = function (server, log) {
     const io = require('socket.io')(server, {logger: log});
-    const game = new Game();
 
     io.set('origins', '*:*');
     io.on(Events.connection, socket => {
@@ -15,7 +14,7 @@ module.exports = function (server, log) {
         socket.on(Events.setname, ({name}) => {
             const color = '000';
 
-            game.addPlayer({id: socket.id, socket, name, color});
+            // game.addPlayer({id: socket.id, socket, name, color});
 
             socket.on(Events.chat_message, text => {
                 const id = Math.random();

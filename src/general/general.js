@@ -6,12 +6,6 @@ const Events = {
 
     // кастомные
     setname: 'setname',
-    getplayers: 'getplayers',
-    signin: 'signin',
-    signout: 'signout',
-    taskstart: 'taskstart',
-    taskend: 'taskend',
-    vote: 'vote',
     chat_message: 'chatmessage'
 };
 

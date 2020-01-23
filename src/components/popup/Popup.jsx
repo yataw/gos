@@ -1,5 +1,4 @@
 import React from 'react';
-import Sprite from '../../assets/img/sprite/sprite.svg';
 
 class Popup extends React.Component {
     constructor(props) {
@@ -39,7 +38,7 @@ class Popup extends React.Component {
             <div className="popup" id="popup">
                 <div className="popup__content">
                     <form action="#" className="form" onSubmit={this.onSubmit}>
-                        <h3 className='u-margin-bottom-medium'>Please enter your name</h3>
+                        <h3 className='u-margin-bottom-medium'>Введите ваше имя</h3>
                         <div className="form__group">
                             <div className="form__input-cont">
                                 <input type="text" className="form__input" placeholder="Your name" id="name"
@@ -49,16 +48,10 @@ class Popup extends React.Component {
                                        onChange={this.onChange}
                                        autoFocus
                                 />
-                                <svg className="form__group-send" onClick={this.onSubmit}>
-                                    <use xlinkHref={`${Sprite}#icon-keyboard_return`}></use>
-                                </svg>
+                                <button onClick={this.onSubmit}>Выбрать</button>
                             </div>
                             <label htmlFor="name" className="form__label">Max 20 characters</label>
                         </div>
-                        {/* TODO добавить colorPicker: Simonwep/pickr*/}
-                        {/*                        <div className="form__group">
-                            <h3>And pick up your marker color</h3>
-                        </div>*/}
                     </form>
                 </div>
                 <a href="#popup" style={{display: 'none'}} id='popup-trigger'></a>
