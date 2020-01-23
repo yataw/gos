@@ -27,3 +27,8 @@
 }*/
 .message__author {
   color: grey; }
+
+.username {
+  position: absolute;
+  right: 0;
+  top: 0; }

@@ -13,12 +13,18 @@ class App extends React.Component {
         const hostname = isDevelopment ? `localhost:${process.env.REACT_APP_DEV_BACKEND_PORT}` : '';
         const socket = io.connect(hostname);
 
+        const name = localStorage.getItem('name', 1);
+
         this.state = {
+            name,
             socket,
             text: '',
             messages: [],
-            showPopup: true,
+            showPopup: !name,
         };
+
+        if (name)
+            this.state.socket.emit(Events.setname, {name});
 
         this.listenSocket(socket);
     }
@@ -28,6 +34,8 @@ class App extends React.Component {
             showPopup: false,
             name
         }, () => {
+            localStorage.setItem('name', name);
+            this.setState({name})
             this.state.socket.emit(Events.setname, {name});
         })
     };
@@ -62,6 +70,8 @@ class App extends React.Component {
     render() {
         const form = (
             <React.Fragment>
+
+                <div className={'username'}>{this.state.name}</div>
 
                 {this.state.messages.map(({id, text, author, me}) => {
                     return (
